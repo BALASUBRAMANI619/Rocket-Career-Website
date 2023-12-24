@@ -15,13 +15,21 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     </head>
     <body>
+      {% include 'nav.html'%}
+
+      <img id="banner" src="static/banner.jpg" height="320" width="420">
     <div class="text-center">
     <h1 class="fw-bold">Rocket Careers</h1>
-    <img id="banner" src="static/banner.jpg" height="320" width="420">
-
-    <h2>About Rocket</h2>
+    
+<div class="row" style="margin-bottom:16px">
+  <div class="col-md-6">
     <p class="lead">    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
+  </div>
+  <div class="d-none d-md-block col-6">
+  <img src="/static/people.jpg" style="height:320px;border-radius:4px;">
+  </div>
+</div>
+      
     <h2>Open Positions</h2>
     <div>
         {% for job in jobs %}
@@ -29,9 +37,9 @@
         {% endfor %}
     </div>
     <div >
-    <button class="btn btn-primary btn-lg">Contact Us</button>
+    <a href="mailto:email@example.com?subject=Question%20about%20Job%20opening&body=My%20name%3A%20%3Cyour%20full%20name%3E%0D%0AMy%20Question%3A%20---My%20question%3A---%0D%0A" class="btn btn-primary btn-lg">Contact Us</a>
     </div>
     </div>
-    </body>    
+    {% include 'footer.html' %}  
 </body>
 </html>
