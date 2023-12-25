@@ -1,2 +1,5 @@
 Flask==2.2.3
+gunicorn
+sqlalchemy
+pysql
 # Add other dependencies as needed
