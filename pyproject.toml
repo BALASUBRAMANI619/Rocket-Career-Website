@@ -9,6 +9,9 @@ packages = [{include = "repl_nix_rocket_career_website"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 flask = "^3.0.0"
+sqlalchemy = "^2.0.23"
+mysql-connector-python = "^8.2.0"
+consultor = "^0.2.0"
 
 
 [build-system]

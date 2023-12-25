@@ -1,7 +1,8 @@
 from flask import Flask,render_template,jsonify
-
+from database import load_jobs_from_db
+from sqlalchemy import text
 app = Flask(__name__)
-
+'''
 JOBS = [
 
     {
@@ -23,14 +24,16 @@ JOBS = [
         'salary': 'Rs 25,00,000'
     }
 ]
-
+'''
 @app.route('/')
 def index():
-    return render_template('home.html', jobs=JOBS)
+  jobs = load_jobs_from_db()
+  return render_template('home.html', jobs=jobs)
 
 @app.route('/API/jobs')
 def list_jobs():
-    return jsonify(JOBS)
+    jobs = load_jobs_from_db()
+    return jsonify(jobs)
 
 
 if __name__ == '__main__':
