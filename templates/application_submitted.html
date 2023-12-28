@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Application Submitted : Rocket Careers</title>
+    {% include 'bootstrap.html' %}
+
+  </head>
+  <body>
+    {% include 'nav.html' %}
+    {% include 'banner.html' %}
+
+
+    <div class="container">
+      <h1 class="text-center fw-bold">Your application for {{job['title']}} has been submitted</h1>
+
+    <h6>Full Name</h6>
+    <div>
+      <p>{{application['full_name']}}</p>
+    </div>
+    <h6>Email address: </h6>
+    <div>
+      <p>{{application['email']}}</p>
+    </div>
+    <h6>Linkedin profile: </h6>
+    <div>
+      <p>{{application['linkedin']}}</p>
+    </div>
+    <h6>Education: </h6>
+    <div> 
+      <p>{{application['education']}}</p>
+    </div>
+    <h6>Work Expirience: </h6>
+    <div>  
+      <p>{{application['expirience']}}</p>
+    </div>
+    <h6>Resume link: </h6>
+    <div>
+      <p>{{application['resume']}}</p>
+    </div>
+</div>  
+
+    {% include 'footer.html' %}  
+  </body>
+</html>

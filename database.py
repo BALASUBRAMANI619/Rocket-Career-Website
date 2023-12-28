@@ -24,3 +24,19 @@ def load_job_from_db(id):
     else:
         return dict(zip(result.keys(), row))
 #        return dict(row)
+
+def add_application_to_db(id, data):
+  try:
+      with engine.connect() as conn:
+          query = text("INSERT INTO applications (job_id, full_name, email, linkedin_url, education, work_experience, resume_url) "
+                       "VALUES (:job_id, :full_name, :email, :linkedin_url, :education, :work_experience, :resume_url)")
+
+          # Combine job_id and data into a single dictionary
+          params = {'job_id': id, **data}
+
+          conn.execute(query, params)
+
+          # Commit the changes
+          conn.commit()
+  except Exception as e:
+      print(f"Error inserting data into the database: {e}")
